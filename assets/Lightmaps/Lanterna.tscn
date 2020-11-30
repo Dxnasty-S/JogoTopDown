@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Lightmaps/torchmap.png" type="Texture" id=1]
+
+[node name="Lanterna" type="Light2D"]
+position = Vector2( -1.5874, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 340, 0 )
+shadow_enabled = true
+shadow_color = Color( 0.0313726, 0.027451, 0.027451, 0 )
