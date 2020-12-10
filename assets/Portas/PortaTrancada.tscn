@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Portas/Porta.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/GFX/PNG/Tiles/tile_463.png" type="Texture" id=2]
+[ext_resource path="res://assets/Portas/PortaTrancada.gd" type="Script" id=3]
+[ext_resource path="res://assets/Interface/PainelNumerico.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Interface/PainelNumerico.tres" type="Theme" id=5]
+
+[node name="PortaTrancada" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="ImagemDaPorta" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+[node name="PainelNumerico" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+[node name="Label" type="Label" parent="." index="5" groups=[
+"Rotulos",
+]]
+visible = false
+margin_left = -8.15587
+margin_top = -40.7435
+margin_right = 31.8441
+margin_bottom = 16.2565
+theme = ExtResource( 5 )
+text = "x
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_exited" from="." to="." method="_on_PortaTrancada_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_PortaTrancada_input_event"]
+[connection signal="combinacao_correta" from="CanvasLayer/PainelNumerico" to="." method="_on_PainelNumerico_combinacao_correta"]

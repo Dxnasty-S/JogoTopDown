@@ -3,7 +3,7 @@ extends "res://Assets/Scripts/PersonagemBase.gd"
 var movimento = Vector2()
 
 # Método "U
-func _physics_process(delta):
+func _physics_process(delta): 
 	atualiza_movimento()
 	move_and_slide(movimento)
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/GFX/PNG/Tiles/tile_537.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Computador/ComputadorPopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Computador/Computador.gd" type="Script" id=3]
+[ext_resource path="res://assets/Interface/PainelNumerico.tres" type="Theme" id=4]
+[ext_resource path="res://assets/GFX/PNG/Tiles/tile_519.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 32 )
+
+[node name="Computador" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ComputadorPopup" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="Label" type="Label" parent="." groups=[
+"Rotulos",
+]]
+visible = false
+margin_left = -4.49821
+margin_top = -65.1068
+margin_right = 35.5018
+margin_bottom = -38.1068
+theme = ExtResource( 4 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 32, 0 )
+rotation = 1.5708
+enabled = false
+texture = ExtResource( 5 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

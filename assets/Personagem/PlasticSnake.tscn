@@ -6,9 +6,11 @@
 
 [node name="PlasticSnake" instance=ExtResource( 2 )]
 position = Vector2( 3.78529, 0.230221 )
-collision_layer = 2147483649
-collision_mask = 6
+collision_mask = 2147483655
 script = ExtResource( 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true

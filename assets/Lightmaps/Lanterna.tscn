@@ -2,7 +2,9 @@
 
 [ext_resource path="res://assets/Lightmaps/torchmap.png" type="Texture" id=1]
 
-[node name="Lanterna" type="Light2D"]
+[node name="Lanterna" type="Light2D" groups=[
+"Lanternas",
+]]
 position = Vector2( -1.5874, 0 )
 texture = ExtResource( 1 )
 offset = Vector2( 340, 0 )

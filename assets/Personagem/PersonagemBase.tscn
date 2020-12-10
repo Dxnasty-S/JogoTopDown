@@ -12,8 +12,8 @@ polygon = PoolVector2Array( 2.25, 21, 7.75, 18, 7.25, 13.5, 8, 11.25, 8.5, 8.75,
 
 [node name="PersonagemBase" type="KinematicBody2D"]
 position = Vector2( 3.78529, 0.86018 )
-collision_layer = 2147483652
-collision_mask = 2147483655
+collision_layer = 2147483649
+collision_mask = 7
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
